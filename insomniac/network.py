@@ -98,6 +98,7 @@ def _request(url, data, headers, initial_timeout):
 
         if isinstance(fail_reason, socket.timeout):
             if attempt <= MAX_ATTEMPTS:
+                print(url)
                 print(COLOR_FAIL + f"Timeout ({timeout} sec), retrying..." + COLOR_ENDC)
             else:
                 print(COLOR_FAIL + f"Timeout ({timeout} sec), reached max number of attempts." + COLOR_ENDC)
